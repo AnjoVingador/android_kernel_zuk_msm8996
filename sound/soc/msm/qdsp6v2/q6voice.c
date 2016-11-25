@@ -17,6 +17,7 @@
 #include <linux/wait.h>
 #include <linux/mutex.h>
 #include <linux/msm_audio_ion.h>
+#include <linux/qpnp/qpnp-haptic.h>
 
 #include <soc/qcom/socinfo.h>
 #include <linux/qdsp6v2/apr_tal.h>
@@ -5854,7 +5855,7 @@ int voc_end_voice_call(uint32_t session_id)
 		ret = -EINVAL;
 	}
 
-	voice_call_active = false;
+	qpnp_disable_haptics(false);
 
 	mutex_unlock(&v->lock);
 	return ret;
@@ -6190,7 +6191,7 @@ int voc_start_voice_call(uint32_t session_id)
 		goto fail;
 	}
 
-	voice_call_active = true;
+	qpnp_disable_haptics(true);
 fail:
 	mutex_unlock(&v->lock);
 #ifdef SUPPORT_CALL_POWER_OP
