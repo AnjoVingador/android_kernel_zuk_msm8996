@@ -12,7 +12,7 @@ export TOOLCHAIN_PATH="${HOME}/kernel/aarch64-linux-gnu-linaro-7.x"
 export CROSS_COMPILE=$TOOLCHAIN_PATH/bin/aarch64-linux-gnu-
 export CONFIG_ABS_PATH="arch/${ARCH}/configs/${CONFIG_FILE}"
 export objdir="${HOME}/kernel/zuk/obj"
-export sourcedir="${HOME}/kernel/zuk/noog-caf"
+export sourcedir="${HOME}/kernel/zuk/cm14.1-sultan"
 export anykernel="${HOME}/kernel/zuk/anykernel"
 compile() {
   make O=$objdir  $CONFIG_FILE -j24
