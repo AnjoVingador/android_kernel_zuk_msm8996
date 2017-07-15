@@ -3,6 +3,7 @@ kernel_version=${1}
 kernel_name="Noog-CAF"
 device_name="Z2"
 zip_name="$kernel_name-$device_name-$kernel_version.zip"
+kernel_dir=$PWD
 
 export CONFIG_FILE="noog-caf_z2_plus_defconfig"
 export ARCH="arm64"
@@ -11,9 +12,9 @@ export KBUILD_BUILD_HOST="DD3Boh"
 export TOOLCHAIN_PATH="${HOME}/kernel/aarch64-linux-gnu-linaro-7.x"
 export CROSS_COMPILE=$TOOLCHAIN_PATH/bin/aarch64-linux-gnu-
 export CONFIG_ABS_PATH="arch/${ARCH}/configs/${CONFIG_FILE}"
-export objdir="${HOME}/kernel/zuk/obj"
-export sourcedir="${HOME}/kernel/zuk/noog-caf"
-export anykernel="${HOME}/kernel/zuk/anykernel"
+export sourcedir=$kernel_dir
+export objdir=$kernel_dir/out
+export anykernel=$kernel_dir/anykernel
 compile() {
   make O=$objdir  $CONFIG_FILE -j24
   make O=$objdir -j24
