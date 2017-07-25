@@ -5,7 +5,7 @@ device_name="Z2"
 zip_name="$kernel_name-$device_name-$kernel_version.zip"
 kernel_dir=$PWD
 
-export CONFIG_FILE="noog-caf_z2_plus_defconfig"
+export CONFIG_FILE="z2_plus_defconfig"
 export ARCH="arm64"
 export KBUILD_BUILD_USER="Lemoncè"
 export KBUILD_BUILD_HOST="DD3Boh"
