@@ -1036,7 +1036,6 @@ include/config/kernel.release: include/config/auto.conf FORCE
 # Things we need to do before we recursively start building the kernel
 # or the modules are listed in "prepare".
 # A multi level approach is used. prepareN is processed before prepareN-1.
-# archprepare is used in arch Makefiles and when processed asm symlink,
 # version.h and scripts_basic is processed / created.
 
 # Listed in dependency order
